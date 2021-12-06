@@ -19,8 +19,13 @@ export class APIAlumnosService {
   constructor(private http: HttpClient) { }
 
   getAlumnos():Observable<any>{
-
     return this.http.get(environment.apiUrl + '/alumnos/').pipe(
+      retry(3)
+    );
+  }
+
+  getDocentes():Observable<any>{
+    return this.http.get(environment.apiUrl + '/docentes/').pipe(
       retry(3)
     );
   }

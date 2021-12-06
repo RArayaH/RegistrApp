@@ -1,14 +1,34 @@
-<ion-header [translucent]="true">
+<ion-header [translucent]="true"> 
   <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
+    <ion-button (click)="logout()" slot="start">
+      <ion-icon name="exit"></ion-icon>      
+    </ion-button>    
+    <ion-title class="text-container"> QR</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <app-alumnos *ngFor="let alumno of alumnos"
-                [alumno]="alumno">
-  </app-alumnos>
+  <ion-list>
+    <ion-list-header>
+      Bienvenido Usuario:
+    </ion-list-header>
+  
+    <ion-item>
+      <ion-avatar slot="start">
+        <img src='../../{{logeadoActual.avatar}}'>
+      </ion-avatar>
+      <ion-label>
+        <h1>{{logeadoActual.nombre}}</h1>
+      </ion-label>
+    </ion-item>
+  
+  </ion-list>
+  <ion-slides [options]="swiperOpts">
+    <ion-slide>
+      <ion-button (click)="scan()" fill="outline" size="large" shape="round">
+        Scan QR
+      </ion-button>
+    </ion-slide>
+  </ion-slides>
 
 </ion-content>

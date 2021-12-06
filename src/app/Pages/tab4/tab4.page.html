@@ -1,0 +1,14 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Tab 4
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <app-alumnos *ngFor="let alumno of alumnos"
+                [alumno]="alumno">
+  </app-alumnos>
+
+</ion-content>

@@ -29,7 +29,7 @@ export class AlertService {
 
       message,
       position: 'top',
-      duration: 1500
+      duration: 3000
     });
     toast.present();
   };
@@ -39,7 +39,7 @@ export class AlertService {
   async loadInicio( message: string ){
     const loading = await this.loadingController.create({
       message,
-      duration: 2000
+      duration: 3000
     });
     await loading.present();
 

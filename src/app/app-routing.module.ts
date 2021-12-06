@@ -1,18 +1,21 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-
 const routes: Routes = [
-  {
-    path: '',
-    loadChildren: () => import('./Pages/tabs/tabs.module').then(m => m.TabsPageModule)
-  },
-  {
+    {
     path: 'login',
     loadChildren: () => import('./Pages/login/login.module').then( m => m.LoginPageModule)
   },
   {
+    path: 'tabs',
+    loadChildren: () => import('./Pages/tabs/tabs.module').then(m => m.TabsPageModule)
+  },
+  {
     path: 'forgot-password',
     loadChildren: () => import('./Pages/forgot-password/forgot-password.module').then(m => m.ForgotPasswordPageModule)
+  },
+  {
+    path: '**',
+    loadChildren: () => import('./Pages/not-found/not-found.module').then(m => m.NotFoundPageModule)
   },
 ];
 @NgModule({

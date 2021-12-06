@@ -1,7 +1,10 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+    <ion-button (click)="logout()" slot="start">
+      <ion-icon name="exit"></ion-icon>      
+    </ion-button> 
     <ion-title>
-      Tab 3
+      Información Usuario
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,9 +12,22 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
+      <ion-title size="large">Bienvenido  </ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+  <ion-card>
+    <ion-item>
+      <ion-avatar slot="start">
+        <img src='../../{{logeadoActual.avatar}}'>
+      </ion-avatar>
+      <ion-label>
+        <h1>{{logeadoActual.nombre}}</h1>
+        <h3>Email: {{logeadoActual.email}}</h3>
+        <h3>Teléfono: {{logeadoActual.telefono}}</h3>
+        <h3>Carrera: {{logeadoActual.carrera}}</h3>
+        <h3>Jornada: {{logeadoActual.jornada}}</h3>
+      </ion-label>
+    </ion-item>
+  </ion-card>
 </ion-content>

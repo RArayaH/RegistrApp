@@ -3,7 +3,7 @@ import { StorageService } from 'src/app/services/storage.service';
 import { NgForm } from '@angular/forms';
 import { AlertService } from 'src/app/services/alert.service';
 import { NavController } from '@ionic/angular';
-import { InterfaceAlumnos } from 'src/app/Interfaces/interface-alumnos';
+import { InterfaceAlumnos } from 'src/app/Interfaces/interface';
 
 @Component({
   selector: 'app-login',
@@ -40,13 +40,13 @@ export class LoginPage implements OnInit {
     if ( valido ) {
       this.alert.loadInicio("Cargando su sesión");
       //this.guardarToken(this.loginUser.email);
-      //this.storage.set('valido', valido)
+      //this.storageService.set('valido', valido)
       this.navController.navigateRoot( '/tabs/tab1', { animated: true } );
     } else {
       this.navController.navigateRoot('/login')
       this.alert.alertaInformacion('Usuario y contraseña no son correctos.');
       //this.token = null;
-      //this.storage.remove('token');
+      //this.storageService.remove('token');
     }
 
 
