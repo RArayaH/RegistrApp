@@ -192,7 +192,7 @@ export class StorageService {
     console.log("archivo creado " + this.file.dataDirectory + 'registroAlumnos.csv');
     const archivo = `${this.file.dataDirectory}registroAlumnos.csv`;
     const email = {
-      to: 'ricardo.arayaha@gamail.com',      
+      to: 'va.corales@gmail.com',      
       attachments: [
         archivo
       ],
